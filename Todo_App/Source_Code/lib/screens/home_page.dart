@@ -5,14 +5,14 @@ import '../constants/colors.dart';
 import '../widgets/todo_item.dart';
 import '../model/todo.dart';
 
-class AddTaskPage extends StatefulWidget {
-  const AddTaskPage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<AddTaskPage> createState() => _AddTaskPageState();
+  State<HomePage> createState() => _AddTaskPageState();
 }
 
-class _AddTaskPageState extends State<AddTaskPage> {
+class _AddTaskPageState extends State<HomePage> {
   final todolist = ToDo.todolist();
   final _todoController = TextEditingController();
 
@@ -88,7 +88,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 margin: const EdgeInsets.only(bottom: 15, right: 30),
                 child: IconButton(
                   onPressed: () {
-                    _addTodoItem(_todoController.text);
+                    Navigator.pushNamed(context, '/addtaskpage');
                   },
                   style: IconButton.styleFrom(
                     backgroundColor: tdBlue,
@@ -176,8 +176,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      leadingWidth: 32,
-      iconTheme: const IconThemeData(color: tdtextColor, size: 30),
       backgroundColor: tdbgColor,
       elevation: 0,
       title: Row(
@@ -188,7 +186,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
           //   size: 27,
           // ),
           Text(
-            "Add Task",
+            "Home Page",
             style: GoogleFonts.karla(
               textStyle: const TextStyle(
                 color: tdtextColor,
