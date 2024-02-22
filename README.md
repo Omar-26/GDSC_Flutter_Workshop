@@ -27,3 +27,19 @@
 <img src="https://github.com/Omar-26/GDSC_Flutter_Workshop/blob/main/CharGPT_App/Preview/ChatGPT%20Interface.png?raw=true" height="400em" /> ㅤ‎<img src="https://github.com/Omar-26/GDSC_Flutter_Workshop/blob/main/CharGPT_App/Preview/ChatGPT%20Chat.png?raw=true" height="400em" />
 
 ---
+All Credits go to the workshop organizer:
+
+- Ahmed Noaman
+- Github: [Ahmed Noaman](https://github.com/ahmedn002)
+
+_________
+
+### Connect with me
+
+Click the icon to contact 👆 :
+<p align="center">
+<a href="https://www.linkedin.com/in/omar-ashraf01" target="_blank"><img align="center" src="https://cdn-icons-png.flaticon.com/128/3938/3938061.png" alt="Linkedin" height="50" width="50" /></a>
+<a href="https://twitter.com/omarash78893600" target="_blank"><img align="center" src="https://cdn-icons-png.flaticon.com/128/3938/3938043.png" alt="Twitter" height="50" width="50" /></a>
+<a href="https://www.facebook.com/ommaar.ashrraaf" target="_blank"><img align="center" src="https://cdn-icons-png.flaticon.com/128/3938/3938025.png" alt="Facebook" height="50" width="50" /></a>
+<a href="https://www.instagram.com/ommaar_ashrraaf/" target="_blank"><img align="center" src="https://cdn-icons-png.flaticon.com/128/3938/3938036.png" alt="Instagram" height="50" width="50" /></a>
+</p>
