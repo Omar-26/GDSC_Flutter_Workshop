@@ -19,13 +19,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       backgroundColor: tdbgColor,
       appBar: _buildAppBar(),
       body: Stack(
         children: [
           Column(
             children: [
+              // TitleSection
               Padding(
                 padding: const EdgeInsets.fromLTRB(18, 18, 18, 2),
                 child: Column(
@@ -43,12 +43,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     ), //Title
                     const SizedBox(height: 7),
                     titleBox(), //Title Box
-                    Container(
-                        margin: const EdgeInsets.fromLTRB(10, 25, 10, 20),
-                        decoration: BoxDecoration(
-                            color: tdPaleWhite,
-                            borderRadius: BorderRadius.circular(100)),
-                        height: 2), //White Line
+                    const Divider(color: tdPaleWhite,
+                      height: 70,indent: 10,endIndent: 10,thickness:2,), //White Line
                     Text(
                       "ToDos",
                       style: GoogleFonts.karla(
@@ -63,9 +59,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ],
                 ),
               ),
+              // ToDosSection
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 2),
+                  physics: const BouncingScrollPhysics(),
                   dragStartBehavior: DragStartBehavior.start,
                   addAutomaticKeepAlives: false,
                   keyboardDismissBehavior:
@@ -82,6 +80,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
               ), //To-Do Items
             ],
           ),
+          // ButtonSection
           Align(
             alignment: Alignment.bottomRight,
             child: Container(

@@ -26,11 +26,12 @@ class _AddTaskPageState extends State<HomePage> {
         children: [
           Column(
             children: [
+              // Title Section
               Padding(
-                padding: const EdgeInsets.fromLTRB(18, 18, 18, 2),
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children:[
                     Text(
                       "Title",
                       style: GoogleFonts.karla(
@@ -43,12 +44,8 @@ class _AddTaskPageState extends State<HomePage> {
                     ), //Title
                     const SizedBox(height: 7),
                     titleBox(), //Title Box
-                    Container(
-                        margin: const EdgeInsets.fromLTRB(10, 25, 10, 20),
-                        decoration: BoxDecoration(
-                            color: tdPaleWhite,
-                            borderRadius: BorderRadius.circular(100)),
-                        height: 2), //White Line
+                    const Divider(color: tdPaleWhite,
+                    height: 70,indent: 10,endIndent: 10,thickness:2,), //White Line
                     Text(
                       "ToDos",
                       style: GoogleFonts.karla(
@@ -66,6 +63,7 @@ class _AddTaskPageState extends State<HomePage> {
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 2),
+                  physics: const BouncingScrollPhysics(),
                   dragStartBehavior: DragStartBehavior.start,
                   addAutomaticKeepAlives: false,
                   keyboardDismissBehavior:
