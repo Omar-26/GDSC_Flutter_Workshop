@@ -1,37 +1,36 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants/colors.dart';
-import '../widgets/todo_item.dart';
-import '../model/todo.dart';
+import 'package:todo_app/constants/colors.dart';
+import 'package:todo_app/model/todo.dart';
+import '../../widgets/todo_item.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class AddTaskPage extends StatefulWidget {
+  const AddTaskPage({super.key});
 
   @override
-  State<HomePage> createState() => _AddTaskPageState();
+  State<AddTaskPage> createState() => _AddTaskPageState();
 }
 
-class _AddTaskPageState extends State<HomePage> {
+class _AddTaskPageState extends State<AddTaskPage> {
   final todolist = ToDo.todolist();
   final _todoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       backgroundColor: tdbgColor,
       appBar: _buildAppBar(),
       body: Stack(
         children: [
           Column(
             children: [
-              // Title Section
+              // TitleSection
               Padding(
-                padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
+                padding: const EdgeInsets.fromLTRB(18, 18, 18, 2),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children:[
+                  children: [
                     Text(
                       "Title",
                       style: GoogleFonts.karla(
@@ -45,7 +44,7 @@ class _AddTaskPageState extends State<HomePage> {
                     const SizedBox(height: 7),
                     titleBox(), //Title Box
                     const Divider(color: tdPaleWhite,
-                    height: 70,indent: 10,endIndent: 10,thickness:2,), //White Line
+                      height: 70,indent: 10,endIndent: 10,thickness:2,), //White Line
                     Text(
                       "ToDos",
                       style: GoogleFonts.karla(
@@ -60,6 +59,7 @@ class _AddTaskPageState extends State<HomePage> {
                   ],
                 ),
               ),
+              // ToDosSection
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 2),
@@ -80,13 +80,14 @@ class _AddTaskPageState extends State<HomePage> {
               ), //To-Do Items
             ],
           ),
+          // ButtonSection
           Align(
             alignment: Alignment.bottomRight,
             child: Container(
                 margin: const EdgeInsets.only(bottom: 15, right: 30),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/addtaskpage');
+                    _addTodoItem(_todoController.text);
                   },
                   style: IconButton.styleFrom(
                     backgroundColor: tdBlue,
@@ -174,6 +175,8 @@ class _AddTaskPageState extends State<HomePage> {
 
   AppBar _buildAppBar() {
     return AppBar(
+      leadingWidth: 32,
+      iconTheme: const IconThemeData(color: tdtextColor, size: 30),
       backgroundColor: tdbgColor,
       elevation: 0,
       title: Row(
@@ -184,7 +187,7 @@ class _AddTaskPageState extends State<HomePage> {
           //   size: 27,
           // ),
           Text(
-            "Home Page",
+            "Add Task",
             style: GoogleFonts.karla(
               textStyle: const TextStyle(
                 color: tdtextColor,
